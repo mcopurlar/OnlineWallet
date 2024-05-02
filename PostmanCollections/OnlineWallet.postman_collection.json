@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "590370b9-e142-4c88-b44b-549f2c9d4f4b",
+		"name": "OnlineWallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "324578"
+	},
+	"item": [
+		{
+			"name": "Add Beneficiary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\": \"46b59a6b-399f-4c27-bdbb-7927ee94e0b3\",\r\n    \"NickName\": \"dsg\",\r\n    \"MobileNumber\": \"536832476\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{MobileRechargeApi}}/api/beneficiaries",
+					"host": [
+						"{{MobileRechargeApi}}"
+					],
+					"path": [
+						"api",
+						"beneficiaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Beneficiaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{MobileRechargeApi}}/api/beneficiaries?userId=46b59a6b-399f-4c27-bdbb-7927ee94e0b3",
+					"host": [
+						"{{MobileRechargeApi}}"
+					],
+					"path": [
+						"api",
+						"beneficiaries"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "46b59a6b-399f-4c27-bdbb-7927ee94e0b3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get TopUp Options",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{MobileRechargeApi}}/api/mobilerecharge/topupoptions",
+					"host": [
+						"{{MobileRechargeApi}}"
+					],
+					"path": [
+						"api",
+						"mobilerecharge",
+						"topupoptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\": \"46b59a6b-399f-4c27-bdbb-7927ee94e0b3\",\r\n    \"BeneficiaryId\": \"bf32c2fd-857f-4e22-a52f-6e0b47c193e7\",\r\n    \"RechargeValue\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{MobileRechargeApi}}/api/mobilerecharge/topup",
+					"host": [
+						"{{MobileRechargeApi}}"
+					],
+					"path": [
+						"api",
+						"mobilerecharge",
+						"topup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account Debit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\": \"2ca2e457-e19e-4d2a-82f0-edd9a1bbcb37\",\r\n    \"Amount\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AccountBalanceApi}}/api/accounts/debit",
+					"host": [
+						"{{AccountBalanceApi}}"
+					],
+					"path": [
+						"api",
+						"accounts",
+						"debit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
